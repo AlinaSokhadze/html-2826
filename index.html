@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="imgs/html5.svg">
+    <title>Document</title>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="#">Enlace 1</a></li>
+            <li><a href="#">Enlace 2</a></li>
+            <li><a href="#">Enlace 3</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <article id="html">
+            <h2>HTML</h2>
+
+            <section id="parrafos">
+                <h3>Párrafos</h3>
+
+                <p><strong>Lorem ipsum</strong> dolor sit amet consectetur adipisicing elit. Harum placeat quisquam vero
+                    ab est vel asperiores temporibus necessitatibus consequuntur nam, laudantium ex magnam fuga officiis
+                    corrupti beatae sint repellat nostrum.</p>
+                <p>Necessitatibus, architecto inventore, rem praesentium quam distinctio cupiditate alias odit aperiam
+                    dolor doloribus magnam. Corporis laboriosam voluptates sunt a possimus totam dignissimos quod non,
+                    pariatur neque quaerat magni mollitia? Iure!</p>
+                <p><em>Quo obcaecati </em>in laborum asperiores fuga voluptate assumenda incidunt modi, voluptas quis
+                    totam mollitia repudiandae alias tenetur! Doloribus, labore assumenda cumque nihil amet quas odio
+                    delectus, ad recusandae, molestiae impedit!</p>
+                <p><span class="destacado">Recusandae</span> cupiditate maxime, laudantium nihil tempora deserunt vel?
+                    Sapiente, consectetur tempore enim eius quisquam harum natus officia eum dignissimos est veritatis
+                    nam, fugiat impedit ab fuga perferendis, quae laborum facere.</p>
+                <p><span class="destacado">Libero</span>, iusto. Libero veniam debitis fuga necessitatibus molestias
+                    beatae perspiciatis adipisci explicabo deleniti totam a odio, qui voluptate. Eveniet commodi fugiat
+                    qui beatae incidunt maxime sit fuga, odio quis recusandae.</p>
+            </section>
+
+            <section id="listas">
+                <h3>Listas</h3>
+
+                <ul>
+                    <li>Elemento 1</li>
+                    <li>Elemento 2</li>
+                    <li>Elemento 3</li>
+                </ul>
+
+                <ol>
+                    <li>Elemento 1</li>
+                    <li>Elemento 2
+                        <ol>
+                            <li>Subelemento 1</li>
+                            <li>Subelemento 2</li>
+                        </ol>
+                    </li>
+                    <li>Elemento 3</li>
+                    <li>Elemento 4</li>
+                </ol>
+
+                <dl>
+                    <dt>HTML</dt>
+                    <dd>Hyper Text Markup Language</dd>
+
+                    <dt>CSS</dt>
+                    <dd>Cascade Style Sheets</dd>
+                </dl>
+            </section>
+
+            <section id="tablas">
+                <h3>Tablas</h3>
+                <table>
+                    <caption>Título de la tabla</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Id</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Apellidos</th>
+                            <th scope="col">Sueldo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Javier</td>
+                            <td>Lete</td>
+                            <td>1234,56€</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Javier</td>
+                            <td>Lete</td>
+                            <td>1234,56€</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Pepe</td>
+                            <td>Pérez</td>
+                            <td>1234,56€</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Javier</td>
+                            <td>Lete</td>
+                            <td>1234,56€</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Javier</td>
+                            <td>Lete</td>
+                            <td>1234,56€</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Javier</td>
+                            <td>Lete</td>
+                            <td>1234,56€</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th scope="row" colspan="3">Total</th>
+                            <td>14567,89€</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </section>
+
+            <section id="multimedia">
+                <h3>Multimedia</h3>
+
+                <figure>
+                    <picture>
+                        <source media="(min-width:650px)" srcset="https://picsum.photos/650/400">
+                        <source media="(min-width:465px)" srcset="https://picsum.photos/400/300">
+                        <img src="https://picsum.photos/400/300" alt="Ejemplo">
+                    </picture>
+                    <figcaption>Imagen de ejemplo</figcaption>
+                </figure>
+
+                <audio src="audios/rock.mp3" controls></audio>
+
+                <video src="videos/rock.mp4" controls></video>
+
+            </section>
+        </article>
+    </main>
+
+    <aside>
+        <ul>
+            <li><a href="#">Anuncio 1</a></li>
+            <li><a href="#">Anuncio 2</a></li>
+            <li><a href="#">Anuncio 3</a></li>
+            <li><a href="#">Anuncio 4</a></li>
+            <li><a href="#">Anuncio 5</a></li>
+        </ul>
+    </aside>
+
+    <footer>
+        &copy;2024 Javier Lete
+    </footer>
+</body>
+
+</html>
