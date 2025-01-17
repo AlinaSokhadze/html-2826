@@ -1,6 +1,10 @@
+@charset "UTF-8";
+
+/* VARIABLES DE CSS */
+
 :root {
-    --color-fondo: white;
-    --color-tinta: black;
+    --color-fondo: rgb(243, 243, 243);
+    --color-tinta: rgb(42, 42, 42);
     --color-enlace: hsl(240, 61%, 59%);
 
     --hue-secundaria: 111;
@@ -8,8 +12,8 @@
     --luminancia-secundaria: 75%;
 
     --color-fondo-secundario: hsl(var(--hue-secundaria), var(--saturacion-secundaria), var(--luminancia-secundaria));
-    --color-fondo-terciario: hsl(var(--hue-secundaria), var(--saturacion-secundaria), calc(var(--luminancia-secundaria) + 10%));
-    --color-fondo-cuaternario: hsl(var(--hue-secundaria), var(--saturacion-secundaria), calc(var(--luminancia-secundaria) + 20%));
+    --color-fondo-terciario: hsl(var(--hue-secundaria), var(--saturacion-secundaria), calc(var(--luminancia-secundaria) + 5%));
+    --color-fondo-cuaternario: hsl(var(--hue-secundaria), var(--saturacion-secundaria), calc(var(--luminancia-secundaria) + 10%));
 
     --tipo-letra-titulo: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     --tipo-letra-texto: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -21,6 +25,8 @@
 
     --sombra: .5rem .5rem .5rem lightgray;
 }
+
+/* RESETEOS GENERALES */
 
 body {
     font-family: var(--tipo-letra-texto);
@@ -39,7 +45,15 @@ h5,
 h6 {
     font-family: var(--tipo-letra-titulo);
 
-    padding: var(--margen);
+    margin: var(--margen) 0;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
 }
 
 pre {
@@ -63,6 +77,72 @@ a:hover {
     text-decoration: underline;
 }
 
+strong {
+    font-weight: normal;
+    font-variant: small-caps;
+    font-size: 1.2rem;
+
+    color: black;
+}
+
+em {
+    text-transform: uppercase;
+    font-style: normal;
+
+    color: black;
+}
+
+.destacado {
+    font-weight: bold;
+}
+
+p, pre:not(.ascii-art) {
+    line-height: calc(1rem + var(--margen-pequeno));
+
+    margin: calc(var(--margen) * 2) 0;
+}
+
+.ascii-art {
+    font-weight: bold;
+}
+
+dt {
+    font-weight: bold;
+}
+
+dd {
+    margin: var(--margen-pequeno) 0;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    
+    & thead, & tfoot {
+        background-color: var(--color-fondo-secundario);
+    }
+
+    & tr:nth-child(even) {
+        background-color: var(--color-fondo-cuaternario);
+    }
+
+    & td, & th {
+        padding: var(--margen-pequeno);
+        border: 1px solid var(--color-fondo-terciario);
+
+        text-align: start;
+    }
+
+}
+
+img, video, audio, iframe {
+    width: 100%;
+}
+
+/* BLOQUES DEL CONTENIDO */
+
+/* Menú principal */
+
 body>nav:first-of-type {
     background-color: var(--color-tinta);
     padding: var(--margen-pequeno);
@@ -75,18 +155,59 @@ body>nav:first-of-type {
 
         padding: 0;
         margin: 0;
-    }
 
-    & a {
-        display: inline-block;
-        padding: var(--margen-pequeno);
-        color: var(--color-fondo);
-        
-        &:hover {
-            background-color: var(--color-fondo);
-            color: var(--color-tinta);
+        & a {
+            display: inline-block;
+            padding: var(--margen-pequeno);
+            color: var(--color-fondo);
 
-            text-decoration: none;
+            &:hover {
+                background-color: var(--color-fondo);
+                color: var(--color-tinta);
+
+                text-decoration: none;
+            }
         }
     }
+}
+
+/* Contenido principal */
+
+main {
+    padding: var(--margen-pequeno);
+
+    & section {
+        padding: var(--margen);
+        margin: var(--margen-pequeno) 0;
+
+        border: 1px solid var(--color-fondo-terciario);
+        border-radius: var(--redondeado);
+
+        &#enlaces a {
+            display: block;
+            margin: var(--margen) 0;
+        }
+
+        &#tablas {
+            overflow: auto;
+
+            & table {
+                & th, & td {
+                    &:first-child, &:last-child {
+                        text-align: end;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Pie de página */
+
+footer {
+    background-color: var(--color-tinta);
+    color: var(--color-fondo);
+    text-align: center;
+
+    padding: var(--margen);
 }
