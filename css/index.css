@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+/* TIPOS DE LETRA */
+
+@import url('https://fonts.googleapis.com/css2?family=Georama:ital,wght@0,100..900;1,100..900&family=Tourney:ital,wght@0,100..900;1,100..900&display=swap');
+
 /* VARIABLES DE CSS */
 
 :root {
@@ -15,8 +19,8 @@
     --color-fondo-terciario: hsl(var(--hue-secundaria), var(--saturacion-secundaria), calc(var(--luminancia-secundaria) + 5%));
     --color-fondo-cuaternario: hsl(var(--hue-secundaria), var(--saturacion-secundaria), calc(var(--luminancia-secundaria) + 10%));
 
-    --tipo-letra-titulo: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    --tipo-letra-texto: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    --tipo-letra-titulo: "Tourney", serif;
+    --tipo-letra-texto: "Georama", serif;
 
     --margen: 1rem;
     --margen-pequeno: .5rem;
