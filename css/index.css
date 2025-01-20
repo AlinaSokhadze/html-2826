@@ -2,7 +2,11 @@
 
 /* TIPOS DE LETRA */
 
+/* Títulos y texto */
 @import url(fonts.css);
+
+/* Fontawesome */
+@import url(all.min.css);
 
 /* VARIABLES DE CSS */
 
@@ -333,6 +337,28 @@ footer {
     text-align: center;
 
     padding: var(--margen);
+
+    & p {
+        margin: 0;
+    }
+
+    & #redes-sociales {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        
+        list-style: none;
+    
+        margin: 0;
+        padding: 0;
+    
+        & a {
+            display: inline-block;
+            margin: var(--margen-pequeno);
+    
+            color: var(--color-fondo);
+        }
+    }
 }
 
 /* Arriba */
@@ -356,3 +382,4 @@ footer {
 
     cursor: pointer;
 }
+
