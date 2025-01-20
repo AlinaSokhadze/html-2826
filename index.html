@@ -16,7 +16,7 @@
 <body>
     <h1>Ejemplos de HTML y CSS</h1>
 
-    <nav>
+    <nav id="menu">
         <ul>
             <li><a href="#parrafos">Párrafos</a></li>
             <li><a href="#enlaces">Enlaces</a></li>
@@ -183,21 +183,27 @@ public class HolaMundo {
 
                 <video src="videos/rock.mp4" controls></video>
 
-                <iframe title="Mapa de Ipartek"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2905.7620821488845!2d-2.916166924535061!3d43.256407878004865!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4e4fb46238d865%3A0xb671edfb1120ab06!2sIpartek%20Servicios%20Inform%C3%A1ticos!5e0!3m2!1ses!2ses!4v1737014230238!5m2!1ses!2ses"
-                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <div class="proporcion p1x1">
+                    <iframe title="Mapa de Ipartek"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2905.7620821488845!2d-2.916166924535061!3d43.256407878004865!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4e4fb46238d865%3A0xb671edfb1120ab06!2sIpartek%20Servicios%20Inform%C3%A1ticos!5e0!3m2!1ses!2ses!4v1737014230238!5m2!1ses!2ses"
+                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
 
-                <iframe title="Album de Deep Purple"
-                    src="https://open.spotify.com/embed/album/32NQ56VZDTXSH3SMv4XSGN?utm_source=generator"
-                    allowfullscreen=""
-                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                    loading="lazy"></iframe>
+                <div class="proporcion p4x3">
+                    <iframe title="Album de Deep Purple"
+                        src="https://open.spotify.com/embed/album/32NQ56VZDTXSH3SMv4XSGN?utm_source=generator"
+                        allowfullscreen=""
+                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                        loading="lazy"></iframe>
+                </div>
 
-                <iframe src="https://www.youtube.com/embed/9bZkp7q19f0?si=K4rHl3IS7xhHEXda" title="YouTube video player"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <div class="proporcion p16x9">
+                    <iframe src="https://www.youtube.com/embed/9bZkp7q19f0?si=K4rHl3IS7xhHEXda" title="YouTube video player"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
 
-                <iframe title="Web de Formación de Ipartek" src="https://formacion.ipartek.com"></iframe>
+                <div class="proporcion p4x3"><iframe title="Web de Formación de Ipartek" src="https://formacion.ipartek.com"></iframe></div>
             </section>
 
             <section id="formularios">
@@ -235,6 +241,14 @@ public class HolaMundo {
                         <input type="color">
                         <input type="range">
 
+                        <select>
+                            <option value="1">Uno</option>
+                            <option value="2">Dos</option>
+                            <option value="3">Tres</option>
+                        </select>
+
+                        <textarea rows="5"></textarea>
+
                         <input type="submit">
                     </fieldset>
                 </form>
@@ -251,7 +265,12 @@ public class HolaMundo {
     </aside>
 
     <footer>
-        &copy;2024 Javier Lete
+        <p>&copy;2024 Javier Lete</p>
+
+        
+        <div id="arriba">
+            <a href="#menu">Arriba</a>
+        </div>
     </footer>
 </body>
 

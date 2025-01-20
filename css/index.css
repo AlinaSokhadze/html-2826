@@ -23,10 +23,15 @@
 
     --redondeado: .5rem;
 
-    --sombra: .5rem .5rem .5rem lightgray;
+    --borde: 1px solid var(--color-fondo-secundario);
+    --sombra: .5rem .5rem .5rem rgba(0, 0, 0, 0.50);
 }
 
 /* RESETEOS GENERALES */
+
+* {
+    box-sizing: border-box;
+}
 
 body {
     font-family: var(--tipo-letra-texto);
@@ -61,7 +66,7 @@ pre {
 
     padding: var(--margen);
 
-    border: 1px solid var(--color-fondo-secundario);
+    border: var(--borde);
     border-radius: var(--redondeado);
     box-shadow: var(--sombra);
 
@@ -96,7 +101,8 @@ em {
     font-weight: bold;
 }
 
-p, pre:not(.ascii-art) {
+p,
+pre:not(.ascii-art) {
     line-height: calc(1rem + var(--margen-pequeno));
 
     margin: calc(var(--margen) * 2) 0;
@@ -117,8 +123,9 @@ dd {
 table {
     border-collapse: collapse;
     width: 100%;
-    
-    & thead, & tfoot {
+
+    & thead,
+    & tfoot {
         background-color: var(--color-fondo-secundario);
     }
 
@@ -126,7 +133,8 @@ table {
         background-color: var(--color-fondo-cuaternario);
     }
 
-    & td, & th {
+    & td,
+    & th {
         padding: var(--margen-pequeno);
         border: 1px solid var(--color-fondo-terciario);
 
@@ -135,8 +143,78 @@ table {
 
 }
 
-img, video, audio, iframe {
+figure {
+    margin: 0;
+}
+
+img,
+video,
+audio {
     width: 100%;
+
+    border: var(--borde);
+    border-radius: var(--redondeado);
+
+    margin: var(--margen-pequeno) 0;
+}
+
+iframe {
+    width: 100%;
+    
+    border: 0;
+}
+
+.proporcion {
+    border: var(--borde);
+    border-radius: var(--redondeado);
+    
+    margin: var(--margen-pequeno) 0;
+    
+    position: relative;
+    overflow: hidden;
+
+    &>iframe {
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    &.p1x1 {
+        padding-bottom: calc(100% * 1 / 1);
+    }
+
+    &.p4x3 {
+        padding-bottom: calc(100% * 3 / 4);
+    }
+
+    &.p16x9 {
+        padding-bottom: calc(100% * 9 / 16);
+    }
+}
+
+form {
+    & fieldset, & input, & textarea, & select, & button {
+        width: 100%;
+
+        border: var(--borde);
+        border-radius: var(--redondeado);
+ 
+        padding: var(--margen-pequeno);
+        margin: var(--margen-pequeno) 0;
+    }
+
+    & button {
+        background-color: var(--color-fondo-secundario);
+    }
+
+    & input {
+        &[type=submit], &[type=reset], &[type=button] {
+            background-color: var(--color-fondo-secundario);
+        }
+    }
 }
 
 /* BLOQUES DEL CONTENIDO */
@@ -183,6 +261,20 @@ main {
         border: 1px solid var(--color-fondo-terciario);
         border-radius: var(--redondeado);
 
+        & h3 {
+            &::before, &::after {
+                color: var(--color-fondo-secundario);
+            }
+
+            &::before {
+                content: "<";
+            }
+
+            &::after {
+                content: ">";
+            }
+        }
+
         &#enlaces a {
             display: block;
             margin: var(--margen) 0;
@@ -192,12 +284,39 @@ main {
             overflow: auto;
 
             & table {
-                & th, & td {
-                    &:first-child, &:last-child {
+
+                & th,
+                & td {
+
+                    &:first-child,
+                    &:last-child {
                         text-align: end;
                     }
                 }
             }
+        }
+    }
+}
+
+/* Anuncios */
+
+aside {
+    background-color: var(--color-fondo-cuaternario);
+
+    padding: var(--margen-pequeno);
+    margin: var(--margen-pequeno);
+
+    border: 1px solid var(--color-fondo-terciario);
+    border-radius: var(--redondeado);
+
+    & ul {
+        list-style: none;
+
+        padding: 0;
+        margin: 0;
+
+        & li {
+            margin: var(--margen-pequeno) 0;
         }
     }
 }
@@ -210,4 +329,26 @@ footer {
     text-align: center;
 
     padding: var(--margen);
+}
+
+/* Arriba */
+
+#arriba a {
+    position: fixed;
+
+    bottom: var(--margen);
+    right: var(--margen);
+
+    background-color: var(--color-fondo-secundario);
+    color: var(--color-tinta);
+
+    padding: var(--margen-pequeno);
+
+    border: 1px solid var(--color-fondo-terciario);
+    border-radius: var(--redondeado);
+    box-shadow: var(--sombra);
+
+    text-decoration: none;
+
+    cursor: pointer;
 }
