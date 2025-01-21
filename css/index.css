@@ -56,6 +56,8 @@ h3,
 h4,
 h5,
 h6 {
+    width: 100%;
+
     font-family: var(--tipo-letra-titulo);
 
     margin: var(--margen) 0;
@@ -168,16 +170,16 @@ audio {
 
 iframe {
     width: 100%;
-    
+
     border: 0;
 }
 
 .proporcion {
     border: var(--borde);
     border-radius: var(--redondeado);
-    
+
     margin: var(--margen-pequeno) 0;
-    
+
     position: relative;
     overflow: hidden;
 
@@ -204,12 +206,17 @@ iframe {
 }
 
 form {
-    & fieldset, & input, & textarea, & select, & button {
+
+    & fieldset,
+    & input,
+    & textarea,
+    & select,
+    & button {
         width: 100%;
 
         border: var(--borde);
         border-radius: var(--redondeado);
- 
+
         padding: var(--margen-pequeno);
         margin: var(--margen-pequeno) 0;
     }
@@ -219,7 +226,10 @@ form {
     }
 
     & input {
-        &[type=submit], &[type=reset], &[type=button] {
+
+        &[type=submit],
+        &[type=reset],
+        &[type=button] {
             background-color: var(--color-fondo-secundario);
         }
     }
@@ -270,7 +280,9 @@ main {
         border-radius: var(--redondeado);
 
         & h3 {
-            &::before, &::after {
+
+            &::before,
+            &::after {
                 color: var(--color-fondo-secundario);
             }
 
@@ -346,16 +358,16 @@ footer {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        
+
         list-style: none;
-    
+
         margin: 0;
         padding: 0;
-    
+
         & a {
             display: inline-block;
             margin: var(--margen-pequeno);
-    
+
             color: var(--color-fondo);
         }
     }
@@ -383,3 +395,199 @@ footer {
     cursor: pointer;
 }
 
+@media (min-width: 768px) {
+    body>nav:first-of-type {
+        position: sticky;
+        top: 0;
+
+        z-index: 1000;
+
+        padding: var(--margen);
+
+        & ul {
+            display: flex;
+            justify-content: center;
+
+            & a {
+                margin: 0 var(--margen-pequeno);
+            }
+        }
+    }
+
+    #parrafos {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--margen);
+
+        & p,
+        & pre {
+            width: calc(50% - var(--margen) / 2);
+        }
+
+        & pre:first-of-type {
+            order: 10;
+            width: 100%;
+        }
+    }
+
+    #enlaces {
+        display: flex;
+        flex-wrap: wrap;
+
+        & a {
+            padding: 0 var(--margen-pequeno);
+        }
+
+        justify-content: center;
+
+    }
+
+    #listas {
+        display: flex;
+        flex-wrap: wrap;
+
+        justify-content: space-evenly;
+    }
+
+    #formularios form {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--margen);
+
+        & fieldset {
+            width: calc(50% - var(--margen) / 2);
+        }
+    }
+
+    aside ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        & a {
+            margin: var(--margen-pequeno);
+        }
+    }
+
+    #arriba {
+        display: none;
+    }
+}
+
+@media (min-width: 1024px) {
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        text-align: start;
+    }
+
+    body>nav:first-of-type {
+        & ul {
+            justify-content: flex-start;
+        }
+    }
+
+    #html {
+        display: grid;
+        gap: var(--margen);
+
+        grid-template-columns: 1fr 1fr;
+
+        & h2 {
+            grid-column-end: span 2;
+        }
+
+        #parrafos {
+            grid-row-end: span 3;
+        }
+
+        #listas {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    #formularios form {
+        & fieldset {
+            width: 100%;
+        }
+    }
+}
+
+@media (min-width: 1440px) {
+    #html {
+        grid-template-columns: 2fr 1fr 1fr;
+
+        grid-template-areas:
+            "titulo-html    titulo-html     titulo-html"
+            "parrafos       enlaces         formularios"
+            "parrafos       listas          formularios"
+            "parrafos       tablas          formularios"
+            "multimedia     multimedia      multimedia";
+
+        & h2 {
+            grid-area: titulo-html;
+        }
+
+        & #parrafos {
+            grid-area: parrafos;
+        }
+
+        & #listas {
+            grid-area: listas;
+        }
+
+        & #enlaces {
+            grid-area: enlaces;
+        }
+
+        & #tablas {
+            grid-area: tablas;
+        }
+
+        & #multimedia {
+            grid-area: multimedia;
+
+            display: grid;
+            gap: var(--margen);
+
+            grid-template-columns: 1fr 1fr 1fr;
+
+            & h3,
+            & audio {
+                grid-column-end: span 3;
+            }
+
+            & audio {
+                grid-row-start: 2;
+            }
+
+            & .proporcion:first-of-type {
+                grid-row-start: 3;
+                grid-column-start: 2;
+            }
+        }
+
+        & #formularios {
+            grid-area: formularios;
+        }
+    }
+}
+
+@media (min-width: 2560px) {
+    #html {
+        grid-template-columns: 2fr 1fr 1fr 2fr;
+
+        grid-template-areas:
+            "titulo-html    titulo-html     titulo-html     titulo-html"
+            "parrafos       enlaces         formularios     multimedia"
+            "parrafos       listas          formularios     multimedia"
+            "parrafos       tablas          formularios     multimedia";
+
+        align-items: start;
+    }
+}
