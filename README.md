@@ -10,6 +10,7 @@
 - Grid: https://css-tricks.com/snippets/css/complete-guide-grid/
 
 - **Manual de JavaScript: https://es.javascript.info/**
+- **Tutorial de JavaScript en video de FreeCodeCamp: https://www.youtube.com/watch?v=PkZNo7MFNFg&list=PLWKjhJtqVAbleDe3_ZA8h3AO2rXar-q2V&index=1**
 
 # Prácticas
 
